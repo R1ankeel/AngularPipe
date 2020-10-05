@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularPipe';
+  e: number = Math.E;
+  str = 'yo man';
+  date: Date = new Date();
+  float = 0.42;
+  obj = {
+    a: 1,
+    b: {
+      a: 2,
+      c: 3,
+      d: {
+        a: 4,
+        b: 5,
+        c: 6
+      }
+    }
+  };
 }
