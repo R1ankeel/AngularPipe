@@ -1,6 +1,21 @@
 <div class="container">
   <h1>Angular Pipe</h1>
 
+  <h2>Custom List Filter Pipe</h2>
+
+  <p>Search by header</p>
+  <button class="btn" (click)="searchField = 'title'">Search by title</button>
+  <button class="btn" (click)="searchField = 'text'">Search by text</button>
+  <input type="text" [(ngModel)]="search">
+
+  <div
+    class="card"
+    *ngFor="let post of posts | filter:search:searchField"
+  >
+    <h3>{{post.title}}</h3>
+    <p>{{post.text}}</p>
+  </div>
+
   <h2>Numbers</h2>
   <p>
     {{ e | number:'1.1-5' }}
@@ -61,7 +76,5 @@
 
   <p>{{ 10 | mult }}</p>
   <p>{{ 10 | mult: 5 }}</p>
-
-  <p>Lorem ipsum dolor sit am            et, consectetur adipisicing elit. Accusa           mus, commodi.</p>
 
 </div>
